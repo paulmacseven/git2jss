@@ -1,5 +1,4 @@
 #!/bin/bash
-##TEST OF git2jss 1
 ###########################################
 set -euo pipefail
 IFS=$'\n\t'
