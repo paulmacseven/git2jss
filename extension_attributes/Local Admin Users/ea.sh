@@ -1,4 +1,5 @@
 #!/bin/bash
+#git2jss test
 # Get list of users with local admin rights and return as an Extension Attribute
 
 # Query Group
