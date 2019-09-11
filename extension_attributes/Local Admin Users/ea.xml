@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<computer_extension_attribute>
+   <name>Local Admin Users</name>
+   <enabled>true</enabled>
+   <description>This will find all users in the local admin group</description>
+   <data_type>String</data_type>
+   <input_type>
+      <type>script</type>
+      <platform>Mac</platform>
+      <script/>
+   </input_type>
+   <input_type>
+      <type>script</type>
+      <platform>Windows</platform>
+      <scripting_language>VBScript</scripting_language>
+      <script>On Error Resume Next
+
+Dim objComputers
+Dim strComputers
+
+Set objComputers= GetObject(&quot;winmgmts:&quot;).Instancesof(&quot;Win32_ComputerSystem&quot;)
+
+For each Computer in objComputers
+strComputers = Computer.UserName
+Next
+
+WScript.Echo &quot;&lt;result&gt;&quot; &amp; strComputers &amp; &quot;&lt;/result&gt;&quot;</script>
+   </input_type>
+   <inventory_display>User and Location</inventory_display>
+   <recon_display>Extension Attributes</recon_display>
+</computer_extension_attribute>
